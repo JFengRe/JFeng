@@ -1,0 +1,155 @@
+body {
+  font-family: fangsong;
+}
+body .f-whole {
+  background: #2D2D2D;
+  width: 100%;
+}
+body .f-whole a:hover {
+  text-decoration: none;
+}
+body .f-whole .f-head {
+  padding: 75px 0px 100px;
+  text-align: center;
+}
+body .f-whole .f-head .f-hLeft {
+  text-align: center;
+  height: 800px;
+}
+body .f-whole .f-head .f-hLeft h3 {
+  color: #FAFAFA;
+  font-size: 46px;
+  margin-bottom: 46px;
+  margin-top: 50%;
+  opacity: 0;
+}
+body .f-whole .f-head .f-hLeft p.lead {
+  color: #CECECE;
+  font-size: 22px;
+  margin-bottom: 55px;
+  opacity: 0;
+}
+body .f-whole .f-head .f-hLeft a.btn {
+  color: #FAFAFA;
+  display: inline-block;
+  width: 168px;
+  height: 55px;
+  font-size: 15px;
+  padding: 0 36px;
+  border: 1px solid #FFCD05;
+  line-height: 55px;
+  border-radius: 55px;
+  opacity: 0;
+  margin-top: 50px;
+}
+body .f-whole .f-head .f-hLeft a.btn:hover {
+  background: #FFCD05;
+  color: #2D2D2D;
+}
+body .f-whole .f-head .f-right img {
+  max-height: 800px;
+  opacity: 0;
+}
+body .f-whole .f-body {
+  width: 100%;
+  padding: 200px 0px 150px;
+}
+body .f-whole .f-body img {
+  width: 100%;
+  opacity: 0;
+}
+body .f-whole .f-body h4 {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 300;
+  color: white;
+  padding: 35px 0 10px 0px;
+  margin-bottom: 15px;
+  widows: 100%;
+  text-align: center;
+  text-indent: 1em;
+  opacity: 0;
+}
+body .f-whole .f-foot {
+  width: 100%;
+  padding: 75px 0px 60px;
+  overflow: hidden;
+}
+body .f-whole .f-foot img {
+  width: 100%;
+  padding: 40px;
+  position: relative;
+}
+body .f-whole .f-foot .f-dleft {
+  left: -150%;
+}
+body .f-whole .f-foot .f-dright {
+  left: 150%;
+}
+body .f-whole .f-tail {
+  width: 100%;
+  text-align: center;
+}
+body .f-whole .f-tail .f-epilogue {
+  color: white;
+  font-size: 34px;
+  padding-bottom: 75px;
+  opacity: 0;
+}
+body .f-whole .f-tail .f-GETbtn {
+  padding-bottom: 50px;
+  position: relative;
+  top: 50px;
+  opacity: 0;
+}
+body .f-whole .f-tail .f-GETbtn a {
+  display: inline-block;
+  width: 124px;
+  height: 54px;
+  font-size: 16px;
+  line-height: 54px;
+  padding: 0px 36px;
+  border: 1px solid #FFCD05;
+  border-radius: 54px;
+  font-weight: 600;
+  color: white;
+}
+body .f-whole .f-tail .f-GETbtn a:hover {
+  background: #FFCD05;
+  color: #2D2D2D;
+}
+body .f-whole .f-tail .f-link {
+  width: 110px;
+  padding: 40px 0;
+  margin: 0 auto;
+}
+body .f-whole .f-tail .f-link ul li {
+  float: left;
+}
+body .f-whole .f-tail .f-link ul li a {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  color: #5B5B5B;
+  margin: 0 10px;
+}
+body .f-whole .f-tail .f-link ul li a:hover {
+  color: #444444;
+}
+@media (max-width: 768px) {
+  .f-whole .f-head {
+    padding: 40px 0 !important;
+  }
+  .f-whole .f-head .f-hLeft {
+    height: 180px !important;
+    margin-bottom: 30px;
+  }
+  .f-whole .f-head .f-hLeft h3 {
+    color: #FAFAFA;
+    margin-bottom: 15px !important;
+    margin-top: 0 !important;
+  }
+  .f-whole .f-head .f-hLeft p.lead {
+    margin-bottom: 15px !important;
+  }
+}
