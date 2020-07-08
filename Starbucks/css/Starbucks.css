@@ -1,0 +1,426 @@
+@media (max-width: 1024px) {
+  .f-leftMenu {
+    width: 100% !important;
+    position: static !important;
+  }
+  .f-leftMenu .f-body {
+    margin-top: 0 !important;
+    padding: 0 !important;
+  }
+  .f-rightContent {
+    width: 100% !important;
+    float: none !important;
+  }
+  .f-rightContent .f-StarbucksRewards .f-club .f-clubSignIn {
+    width: 100% !important;
+  }
+  .f-rightContent .f-StarbucksRewards .f-club .f-clubImg {
+    width: 100% !important;
+  }
+}
+@media (max-width: 768px) {
+  .f-phoneSpecific {
+    display: block !important;
+  }
+  .f-leftMenu .f-header {
+    display: none;
+  }
+  .f-leftMenu .f-body {
+    padding-top: 25px !important;
+  }
+  .f-leftMenu .f-sign_in {
+    display: none;
+  }
+  .f-rightContent .f-StarbucksRewards .f-club {
+    text-align: center !important;
+  }
+  .f-rightContent .f-StarbucksRewards .f-club .f-clubImg {
+    margin: 0px !important;
+  }
+}
+body {
+  width: 100%;
+}
+.f-whole {
+  padding: 0px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.f-whole a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+.f-whole .f-leftMenu {
+  width: 30%;
+  position: fixed;
+}
+.f-whole .f-leftMenu .f-header {
+  padding: 24px;
+}
+.f-whole .f-leftMenu .f-header .f-navigation {
+  float: left;
+}
+.f-whole .f-leftMenu .f-header .f-navigation ul li {
+  float: left;
+}
+.f-whole .f-leftMenu .f-header .f-navigation ul li a {
+  height: 36px;
+  margin-left: 20px;
+  line-height: 36px;
+  color: #212121;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.f-whole .f-leftMenu .f-header .f-logo {
+  float: left;
+  margin-right: 6px;
+}
+.f-whole .f-leftMenu .f-header .f-logo img {
+  width: 36px;
+  height: 36px;
+}
+.f-whole .f-leftMenu .f-header .dropdown .f-btnClose {
+  float: right;
+  height: 36px;
+  width: 36px;
+  line-height: 36px;
+}
+.f-whole .f-leftMenu .f-header .dropdown .f-btnClose img {
+  width: 24px;
+  height: 24px;
+}
+.f-whole .f-leftMenu .f-header .dropdown .dropdown-menu {
+  position: relative;
+  left: 50px;
+  top: 0px;
+  box-shadow: none;
+  border: none;
+  width: 90%;
+  border-bottom: 2px solid #E0E0E0;
+  padding-bottom: 20px;
+}
+.f-whole .f-leftMenu .f-header .dropdown .dropdown-menu a {
+  font-weight: 700;
+  font-size: 20px;
+  padding: 8px 0;
+}
+.f-whole .f-leftMenu .f-body {
+  width: 100%;
+  padding: 0px 24px 0px 84px;
+  margin-top: 50%;
+  margin-bottom: 20px;
+}
+.f-whole .f-leftMenu .f-body .f-display-1 {
+  margin-bottom: 24px;
+}
+.f-whole .f-leftMenu .f-body .f-display-1 span {
+  display: inline-block;
+  font-size: 2.8rem;
+  color: #212121;
+  font-weight: 700;
+}
+.f-whole .f-leftMenu .f-body .f-sign_in {
+  width: 272px;
+}
+.f-whole .f-leftMenu .f-body .f-sign_in a {
+  font-size: 1.8rem;
+  color: #00A862;
+}
+.f-whole .f-leftMenu .f-body .f-sign_in .f-login {
+  margin-right: 24px;
+}
+.f-whole .f-leftMenu .f-body .f-sign_in .f-login img {
+  width: 28px;
+  height: 28px;
+  margin-right: 4px;
+}
+.f-whole .f-leftMenu .f-body .f-sign_in .f-register {
+  width: 62px;
+  height: 34px;
+  border: 1px solid #00A862;
+  padding: 6px 12px;
+  line-height: 34px;
+  border-radius: 34px;
+}
+.f-whole .f-rightContent {
+  width: 70%;
+  padding: 0;
+  float: right;
+}
+.f-whole .f-rightContent #carousel-example-generic {
+  position: relative;
+  width: 100%;
+}
+.f-whole .f-rightContent #carousel-example-generic .advertisement {
+  width: 40px;
+  height: 24px;
+  background: #000;
+  color: white;
+  display: inline-block;
+  line-height: 24px;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9;
+  opacity: 0.6;
+}
+.f-whole .f-rightContent #carousel-example-generic a {
+  background-image: none;
+}
+.f-whole .f-rightContent .f-ListingRecruitment {
+  background: #F7F7F7;
+  margin: 0px;
+  padding: 24px 12px;
+  width: 100%;
+}
+.f-whole .f-rightContent .f-ListingRecruitment a {
+  padding: 12px 12px;
+}
+.f-whole .f-rightContent .f-ListingRecruitment a img {
+  width: 100%;
+  height: 100%;
+}
+.f-whole .f-rightContent .f-ListingRecruitment a:hover img {
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.124);
+  border-radius: 2px;
+}
+.f-whole .f-rightContent .f-StarbucksRewards {
+  padding: 36px 0 0 36px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.f-whole .f-rightContent .f-StarbucksRewards .f-club .f-clubSignIn {
+  width: 30%;
+  height: 230px;
+  display: inline-block;
+}
+.f-whole .f-rightContent .f-StarbucksRewards .f-club .f-clubSignIn h5 {
+  color: #000;
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+.f-whole .f-rightContent .f-StarbucksRewards .f-club .f-clubSignIn p {
+  color: #959795;
+  font-size: 1.8rem;
+  line-height: 36px;
+  font-weight: normal;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+.f-whole .f-rightContent .f-StarbucksRewards .f-club .f-clubSignIn p a {
+  color: #C2A661;
+}
+.f-whole .f-rightContent .f-StarbucksRewards .f-club .f-clubSignIn .r-btn {
+  border: 1px solid #00A862;
+  font-weight: 500;
+  padding: 6px 18px;
+  border-radius: 48px;
+  color: #00A862;
+  font-size: 1.8rem;
+  width: 74px;
+  height: 42px;
+  line-height: 28px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 6px;
+}
+.f-whole .f-rightContent .f-StarbucksRewards .f-club .f-clubImg {
+  display: inline-block;
+  margin: 56px;
+  right: 10px;
+  width: 50%;
+  height: 72px;
+}
+.f-whole .f-rightContent .f-selected {
+  width: 100%;
+  padding-top: 36px;
+  background: #F7F7F7;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe .f-mind {
+  font-size: 1.8rem;
+  color: #909290;
+  margin-bottom: 24px;
+  display: block;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe .f-SelectedGoods {
+  width: 100%;
+  padding-top: 48px;
+  overflow: hidden;
+  display: block;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe .f-SelectedGoods li.active a {
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.124);
+  border-radius: 2px;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe .f-SelectedGoods li {
+  float: left;
+  height: 248px;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe .f-SelectedGoods li a {
+  height: 212px;
+  width: 100%;
+  background: white;
+  display: inline-block;
+  padding: 0 6px;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe .f-SelectedGoods li a img {
+  width: 100px;
+  height: 72px;
+  margin: -48px 0 -24px 0;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe .f-SelectedGoods li a .f-SelectedTopics {
+  width: 100%;
+  height: 28px;
+  margin: 26px 0 8px 0;
+  font-size: 1.8rem;
+  color: #212121;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe .f-SelectedGoods li a .f-SelectedContent {
+  width: 100%;
+  height: 58px;
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  color: #707070;
+  line-height: 26px;
+}
+.f-whole .f-rightContent .f-selected .f-boxSe .f-SelectedGoods li a .f-SeMore {
+  color: #D7C599;
+  font-size: 1.4rem;
+}
+.f-whole .f-rightContent .f-Classroom {
+  width: 100%;
+  background: #FCFCFC;
+  margin-top: -24px;
+  padding: 36px 0px;
+  text-align: center;
+  position: relative;
+}
+.f-whole .f-rightContent .f-Classroom .f-btn {
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  z-index: 9;
+  overflow: hidden;
+}
+.f-whole .f-rightContent .f-Classroom .f-btn .r-leftBtn {
+  display: inline-block;
+  float: left;
+  background: #FFFFFF;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+.f-whole .f-rightContent .f-Classroom .f-btn .r-rightBtn {
+  display: inline-block;
+  float: right;
+  background: #FFFFFF;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+.f-whole .f-rightContent .f-Classroom .f-CRContent {
+  width: 768px;
+  margin: 0 auto;
+  padding: 0px 24px;
+}
+.f-whole .f-rightContent .f-Classroom .f-CRContent h2 {
+  color: #000;
+  width: 100%;
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+}
+.f-whole .f-rightContent .f-Classroom .f-CRContent p {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: #6F6F6F;
+}
+.f-whole .f-rightContent .f-Classroom .f-Knowledge {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.f-whole .f-rightContent .f-Classroom .f-Knowledge .f-klBox {
+  width: 1300px;
+  height: 254px;
+}
+.f-whole .f-rightContent .f-Classroom .f-Knowledge .f-klBox a {
+  display: inline-block;
+  width: 290px;
+  height: 230px;
+  margin: 12px 16px 12px 0px;
+  position: relative;
+  background: white;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+}
+.f-whole .f-rightContent .f-Classroom .f-Knowledge .f-klBox a img {
+  width: 290px;
+  height: 168px;
+}
+.f-whole .f-rightContent .f-Classroom .f-Knowledge .f-klBox a span {
+  position: absolute;
+  display: block;
+  background: #C2A661;
+  top: 10px;
+  left: 0px;
+  height: 36px;
+  padding: 4px 12px;
+  line-height: 28px;
+  font-size: 1.6rem;
+  color: white;
+}
+.f-whole .f-rightContent .f-Classroom .f-Knowledge .f-klBox a strong {
+  color: #212121;
+  font-size: 1.8rem;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  margin-left: -100px;
+}
+.f-whole .f-phoneSpecific {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+}
+.f-whole .f-phoneSpecific a {
+  display: block;
+  width: 20%;
+  float: left;
+  text-align: center;
+}
+.f-whole .f-phoneSpecific a img {
+  display: inline-block;
+}
+.f-whole .f-phoneSpecific a .f-img2 {
+  display: none;
+}
+.f-whole .f-phoneSpecific a span {
+  display: block;
+  color: #979797;
+  font-size: 14px;
+}
+.f-whole .f-phoneSpecific a.active .f-img2 {
+  display: inline-block;
+}
+.f-whole .f-phoneSpecific a.active .f-img1 {
+  display: none;
+}
+.f-whole .f-phoneSpecific a.active span {
+  color: #00A862;
+}
