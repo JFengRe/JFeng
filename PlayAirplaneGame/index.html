@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打飞机</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div class="stage">
+      <div class="start">
+        <button>开始游戏</button>
+      </div>
+      <!-- 开始游戏 -->
+      <div class="game">
+        <!-- 排行榜 -->
+        <table class="ranking" border="">
+          <tr>
+            <th>姓名</th>
+            <th>得分</th>
+            <th>排名</th>
+          </tr>
+          <tr>
+            <td>Mark</td>
+            <td>99</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Nick</td>
+            <td>66</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Marry</td>
+            <td>55</td>
+            <td>3</td>
+          </tr>
+          
+          <!-- 死亡后的菜单 -->
+        </table>
+        <div class="death-scene">
+            <button class="paylife">花钱买命</button>
+            <button class="restart">重新开始</button>
+        </div>
+      <h6 class="score">0</h6>
+      <!-- 飞机 -->
+      <img class="our-plane" src="./img/our-plane.gif" alt="">
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+
+</html>

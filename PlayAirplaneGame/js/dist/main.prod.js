@@ -1,0 +1,1 @@
+"use strict";var stageScene=document.querySelector(".stage"),startButton=stageScene.querySelector(".start button");startButton.onclick=function(){stageScene.classList.add("play"),console.log("1")};
