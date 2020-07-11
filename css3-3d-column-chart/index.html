@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D柱体统计图</title>
+    <link rel="stylesheet" href="../css/minireset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="stage">
+        <div class="card">
+            <div class="content">
+                <div class="mask"></div>
+                <h2>STEPS</h2>
+                <p>THIS WEEK</p>
+                <ul class="chart">
+                    <li>M
+                        <div class="side front"><span>20,000 </span> </div>
+                        <div class="side right"><span></span></div>
+                    </li>
+                    <li>T
+                        <div class="side front"><span>10,000 </span> </div>
+                        <div class="side right"><span></span></div>
+                    </li>
+                    <li>W
+                        <div class="side front"><span>15,000 </span> </div>
+                        <div class="side right"><span></span></div>
+                    </li>
+                    <li>T
+                        <div class="side front"><span>24,000 </span> </div>
+                        <div class="side right"><span></span></div>
+                    </li>
+                    <li>F
+                        <div class="side front"><span>7,000 </span> </div>
+                        <div class="side right"><span></span></div>
+                    </li>
+                    <li>S
+                        <div class="side front"><span>7,000 </span> </div>
+                        <div class="side right"><span></span></div>
+                    </li>
+                    <li>S
+                        <div class="side front"><span>10,000 </span> </div>
+                        <div class="side right"><span></span></div>
+                    </li>
+                </ul>
+                <h3>93,000</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector(".stage").onclick = function () { 
+            
+            this.classList.toggle("active");
+         }
+    </script>
+</body>
+
+</html>
