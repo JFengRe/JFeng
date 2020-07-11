@@ -1,0 +1,80 @@
+.f-show {
+  font-family: 'Srisakdi', cursive;
+  text-align: center;
+  font-size: 50px;
+  color: #FF9933;
+  font-weight: 600;
+  text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+}
+.f-bootstrap .container {
+  width: 100%;
+}
+.f-bootstrap .container h1 {
+  font-size: 46px;
+  text-align: center;
+  margin-top: 50px;
+}
+.f-bootstrap .container .row {
+  padding: 54px;
+  text-align: center;
+}
+.f-bootstrap .container .row .content {
+  margin-bottom: 30px;
+  padding: 0 15px;
+}
+.f-bootstrap .container .row .content h3 {
+  font-size: 36px;
+}
+.f-bootstrap .container .row .content .f-models {
+  height: 600px;
+  display: block;
+  background: url("../img/models.png") no-repeat;
+  -moz-background-size: cover;
+       background-size: cover;
+  background-position: right;
+  border: 5px solid whitesmoke;
+}
+.f-bootstrap .container .row .content .f-Starbucks {
+  height: 600px;
+  display: block;
+  background: url("../img/Starbucks.png") no-repeat;
+  -moz-background-size: cover;
+       background-size: cover;
+  background-position: right;
+  border: 5px solid whitesmoke;
+}
+.f-bootstrap .container .row .content .f-RANE {
+  height: 600px;
+  display: block;
+  background: black url("../img/RANG.png") no-repeat;
+  -moz-background-size: cover;
+       background-size: cover;
+  background-position: right;
+  border: 5px solid whitesmoke;
+}
+.f-js .container {
+  width: 100%;
+}
+.f-js .container h1 {
+  font-size: 46px;
+  text-align: center;
+  margin-top: 50px;
+}
+.f-js .container .row {
+  padding: 54px;
+  text-align: center;
+}
+.f-js .container .row .content {
+  margin-bottom: 30px;
+  padding: 0 15px;
+}
+.f-js .container .row .content h3 {
+  font-size: 36px;
+}
+.f-js .container .row .content .f-models {
+  display: block;
+}
+.f-js .container .row .content .f-models img {
+  border: 5px solid whitesmoke;
+}
+/*# sourceMappingURL=./style.css.map */
