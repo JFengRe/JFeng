@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东倒计时</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .div {
+            width: 240px;
+            height: 350px;
+            background-color: #E83632;
+            text-align: center;
+            position: relative;
+            top: 100px;
+            margin: 0 auto;
+        }
+
+        .div h1 {
+            color: #FFFFFF;
+            width: 100%;
+            position: absolute;
+            top: 50px;
+        }
+
+        .div h3 {
+            width: 100%;
+            color: #F39B99;
+            position: absolute;
+            top: 100px;
+        }
+
+        .div img {
+            position: absolute;
+            top: 150px;
+            left: 43%;
+        }
+
+        .div h4 {
+            color: #FFFFFF;
+            position: absolute;
+            top: 210px;
+            left: 60px;
+        }
+
+        .div .dtime {
+            position: absolute;
+            top: 260px;
+            left: 35px;
+            width: 200px;
+        }
+
+        .div .dtime div {
+            background-color: #2F3430;
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+        }
+
+        .div .dtime div p {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 26px;
+            color: #FFFFFF;
+        }
+
+        .div .line {
+            width: 100%;
+            background-color: #E83632;
+            position: absolute;
+            top: 285px;
+            height: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="div">
+        <h1>倒计时</h1>
+        <h3>COUNT DOWN</h3>
+        <img src="./img/lightning.png" alt="">
+        <h4>距离结束还剩</h4>
+        <div class="dtime">
+            <div class="hour">
+                <p>03</p>
+            </div>
+            <div class="minute">
+                <p>02</p>
+            </div>
+            <div class="second">
+                <p>01</p>
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+    <script>
+        function xxx() {
+            var hour = document.getElementsByTagName("p")[0];
+            var minute = document.getElementsByTagName("p")[1];
+            var second = document.getElementsByTagName("p")[2];
+
+
+            function addzero(time) {
+                return time < 10 ? "0" + time : time;
+            }
+
+            setInterval(function () {
+                // 结束时间
+                var endDate = new Date(2020, 4, 28, 23, 59, 59);
+                // 结束时间的时间戳
+                var endTimeStamp = endDate.getTime();
+                // 现在时间
+                var date = new Date();
+                // 现在时间的时间戳
+                var nowDate = date.getTime();
+                // 相差时间戳
+                var differDateStamp = endTimeStamp - nowDate;
+
+                //  相差时间
+                var differDate = new Date();
+                differDate.setTime(differDateStamp);
+
+                var nowHours = addzero((differDate.getHours()));
+                var nowMinute = addzero(differDate.getMinutes());
+                var nowSecond = addzero(differDate.getSeconds());
+
+
+                // 改变时间
+                hour.innerHTML = nowHours;
+                minute.innerHTML = nowMinute;
+                second.innerHTML = nowSecond;
+
+                // 倒计时结束
+                if (nowHours == 00 && nowMinute == 00 && nowSecond == 00) {
+                    clearInterval;
+                }
+            }, 1000);
+        }
+        xxx()
+    </script>
+</body>
+
+</html>

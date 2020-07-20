@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        .stage {
+            width: 800px;
+            background-color: yellow;
+            position: relative;
+            overflow: hidden;
+        }
+
+        li {
+            width: 300px;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        li img {
+            display: block;
+            width: 300px;
+        }
+
+        li:nth-child(1) {
+            position: relative;
+        }
+
+        li:nth-child(2) {
+            left: 300px;
+        }
+
+        li:nth-child(3) {
+            left: 400px;
+        }
+
+        li:nth-child(4) {
+            left: 500px;
+        }
+
+        li:nth-child(5) {
+            left: 600px;
+        }
+
+        li:nth-child(6) {
+            left: 700px;
+        }
+
+        .stage li .mask {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .stage li:first-child .mask {
+            height: 16%;
+        }
+
+        .stage li .mask .desc {
+            position: absolute;
+            bottom: 0px;
+            left: 200%;
+        }
+
+        .stage li:first-child .mask .desc {
+            left: 0;
+        }
+
+        .stage li .mask .desc h1 {
+            font-size: 24px;
+            color: white;
+            margin-left: 15px;
+            position: absolute;
+            bottom: 26px;
+            left: 0;
+        }
+
+        .stage li .mask .desc h2 {
+            font-size: 20px;
+            color: #7FFFC7;
+            margin-left: 10px;
+
+        }
+
+        .stage li .mask .info {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+        }
+
+
+        .stage li:first-child .mask .info {
+            left: -100%;
+        }
+
+        .stage li .mask .info h1 {
+            font-size: 24px;
+            color: white;
+            margin-left: 15px;
+            position: absolute;
+            bottom: 26px;
+            left: 0;
+        }
+
+        .stage li .mask .info h2 {
+            font-size: 20px;
+            color: #7FFFC7;
+            margin-left: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="stage">
+        <li>
+            <img src="./img/datouwang1.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h2>胜率</h2>
+                    <h1>NO.1</h1>
+                </div>
+
+                <div class="desc">
+                    <h1>许诸</h1>
+                    <h2>抗伤NO.1</h2>
+                </div>
+
+            </div>
+
+        </li>
+        <li>
+            <img src="./img/datouwang2.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h2>胜率</h2>
+                    <h1>NO.1</h1>
+                </div>
+
+                <div class="desc">
+                    <h1>董卓</h1>
+                    <h2>胜率NO.1</h2>
+                </div>
+
+            </div>
+
+        </li>
+        <li>
+            <img src="./img/datouwang3.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h2>胜率</h2>
+                    <h1>NO.1</h1>
+                </div>
+
+                <div class="desc">
+                    <h1>吕布</h1>
+                    <h2>输出NO.1</h2>
+                </div>
+
+
+            </div>
+
+        </li>
+        <li>
+            <img src="./img/datouwang4.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h2>胜率</h2>
+                    <h1>NO.1</h1>
+                </div>
+
+                <div class="desc">
+                    <h1>王月英</h1>
+                    <h2>胜率NO.1</h2>
+                </div>
+
+            </div>
+
+        </li>
+        <li>
+            <img src="./img/datouwang5.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h2>胜率</h2>
+                    <h1>NO.1</h1>
+                </div>
+
+                <div class="desc">
+                    <h1>孙策</h1>
+                    <h2>胜率NO.1</h2>
+                </div>
+
+            </div>
+
+        </li>
+        <li>
+            <img src="./img/datouwang6.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h2>胜率</h2>
+                    <h1>NO.1</h1>
+                </div>
+
+                <div class="desc">
+                    <h1>张鸽</h1>
+                    <h2>胜率NO.1</h2>
+                </div>
+
+            </div>
+
+        </li>
+    </ul>
+
+    <script>
+
+        function xxx() {
+            // 鼠标移到图片上时
+            $('.stage li').hover(function () {
+
+                // 当前图片的下标
+                var currentIndex = $(this).index();
+                // console.log(currentIndex);
+
+                // 遍历li
+                $('li').each(function (index, element) {
+
+                    // 当前图片和当前图片之前的图片
+                    if (index < currentIndex) {
+                        // 改变当前图片的前面图片的定位
+                        $(element).animate({ left: index * 100 + 'px' }, 500)
+                            // 遮盖的高度
+                            .children('.mask').animate({ 'height': '100%' }, 500)
+                            //胜率显隐
+                            .children('.info').animate({ 'left': '0' }, 500)
+                            //名字显隐
+                            .next().animate({ 'left': '200%' }, 500)
+
+                    } else if (index == currentIndex) {
+                        // 改变当前图片的定位
+                        $(element).animate({ left: index * 100 + 'px' }, 500)
+                            // 遮盖的高度
+                            .children('.mask').animate({ 'height': '16%' }, 500)
+                            //胜率显隐
+                            .children('.info').animate({ 'left': '-100%' }, 500)
+                            //名字显隐
+                            .next().animate({ 'left': '0%' }, 500)
+
+                    } else {
+                        // 改变当前图片后的后面图片的定位
+                        $(element).animate({ left: (index - 1) * 100 + 300 + 'px' }, 500)
+                            // 遮盖的高度
+                            .children('.mask').animate({ 'height': '100%' }, 500)
+                            //胜率显隐
+                            .children('.info').animate({ 'left': '0' }, 500)
+                            //名字显隐
+                            .next().animate({ 'left': '200%' }, 500)
+
+                    }
+
+                })
+
+
+            }, function () {
+                $('li').clearQueue()
+                    .children('.mask').clearQueue()
+                    .children('.info').clearQueue()
+                    .next().clearQueue();
+            })
+
+        }
+
+        xxx()
+    </script>
+</body>
+
+</html>

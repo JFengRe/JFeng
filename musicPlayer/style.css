@@ -1,0 +1,324 @@
+body {
+  height: 100vh;
+  background-color: #1D1D1D;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.stage {
+  width: 550px;
+  height: 180px;
+  padding: 25px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 50px;
+}
+.stage .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://p1.music.126.net/n4YTVSO7QK1VRQMCEeOPqA==/80264348845281.jpg") no-repeat;
+  background-position: center;
+  -moz-background-size: cover;
+       background-size: cover;
+  -webkit-filter: blur(15px) contrast(80%);
+          filter: blur(15px) contrast(80%);
+  -webkit-transform: scale(2);
+     -moz-transform: scale(2);
+      -ms-transform: scale(2);
+       -o-transform: scale(2);
+          transform: scale(2);
+  z-index: -1;
+}
+.stage .rod {
+  width: 25px;
+  height: 74px;
+  position: absolute;
+  top: 25px;
+  left: 140px;
+  z-index: 99;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transform-origin: 20px 5px;
+     -moz-transform-origin: 20px 5px;
+      -ms-transform-origin: 20px 5px;
+       -o-transform-origin: 20px 5px;
+          transform-origin: 20px 5px;
+  -webkit-transform: rotate(-16deg);
+     -moz-transform: rotate(-16deg);
+      -ms-transform: rotate(-16deg);
+       -o-transform: rotate(-16deg);
+          transform: rotate(-16deg);
+}
+.stage.active .rod {
+  -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+       -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.stage.active .picture img {
+  -webkit-animation-play-state: running;
+     -moz-animation-play-state: running;
+       -o-animation-play-state: running;
+          animation-play-state: running;
+}
+.stage .picture {
+  width: 130px;
+  height: 100%;
+  z-index: 1;
+}
+.stage .picture img {
+  width: 130px;
+  height: 130px;
+  border: 26px solid #1B1B1B;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-animation: head_portrait 3s linear infinite;
+     -moz-animation: head_portrait 3s linear infinite;
+       -o-animation: head_portrait 3s linear infinite;
+          animation: head_portrait 3s linear infinite;
+  -webkit-animation-play-state: paused;
+     -moz-animation-play-state: paused;
+       -o-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.stage .info_control {
+  width: 330px;
+  height: 100%;
+  margin-left: 30px;
+  z-index: 1;
+}
+.stage .info_control .info {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.stage .info_control .info h3 {
+  font-size: 16px;
+  color: #ffffff;
+}
+.stage .info_control .info h5 {
+  font-size: 16px;
+  color: #cccccc;
+  margin-top: 10px;
+}
+.stage .info_control .controlUp {
+  width: 100%;
+  height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.stage .info_control .controlUp .controlUp_btn .Last,
+.stage .info_control .controlUp .controlUp_btn .play_pause,
+.stage .info_control .controlUp .controlUp_btn .Next,
+.stage .info_control .controlUp .controlUp_btn .playMode {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+.stage .info_control .controlUp .volume {
+  width: 126px;
+  height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 24px;
+  position: relative;
+}
+.stage .info_control .controlUp .volume span {
+  display: block;
+  height: 100%;
+  width: 24px;
+  font-size: 16px;
+  z-index: 1;
+}
+.stage .info_control .controlUp .volume .replace {
+  position: absolute;
+  width: 105px;
+  height: 5px;
+  top: 6px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.stage .info_control .controlUp .volume .replace .bgc {
+  width: 10px;
+  height: 5px;
+  background: #0CB6D4;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.stage .info_control .controlUp .volume input {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+.stage .info_control .controlDown {
+  width: 100%;
+  height: 16px;
+  position: relative;
+}
+.stage .info_control .controlDown .speed_of_progress {
+  width: 100%;
+  height: 10px;
+  z-index: 1;
+  opacity: 0;
+}
+.stage .info_control .controlDown .bgc {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 5px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  margin-bottom: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.stage .info_control .controlDown .bgc .sider {
+  width: 0;
+  height: 5px;
+  background: #0CB6D4;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.stage .info_control .controlDown .currentTime {
+  display: inline-block;
+  width: 45px;
+  height: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  text-align: center;
+  margin-right: 236px;
+  color: white;
+  line-height: 16px;
+}
+.stage .info_control .controlDown .endTime {
+  display: inline-block;
+  width: 45px;
+  height: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  text-align: center;
+  color: white;
+  line-height: 16px;
+}
+.songList {
+  width: 550px;
+  background: #0E0E0E;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.songList ul li {
+  font-size: 16px;
+  color: #C5C5C4;
+}
+.songList ul li.play {
+  color: white;
+}
+audio {
+  height: 30px;
+  width: 550px;
+  opacity: 0;
+}
+@-webkit-keyframes head_portrait {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-moz-keyframes head_portrait {
+  from {
+    -moz-transform: rotate(0);
+         transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+         transform: rotate(360deg);
+  }
+}
+@-o-keyframes head_portrait {
+  from {
+    -o-transform: rotate(0);
+       transform: rotate(0);
+  }
+  to {
+    -o-transform: rotate(360deg);
+       transform: rotate(360deg);
+  }
+}
+@keyframes head_portrait {
+  from {
+    -webkit-transform: rotate(0);
+       -moz-transform: rotate(0);
+         -o-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=./style.css.map */

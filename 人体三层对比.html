@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人体三层对比</title>
+    <style>
+        body{
+            background: #111111;
+        }
+        .stage {
+            width: 500px;
+            position: relative;
+            overflow: hidden;
+            top: 100px;
+            margin: 0 auto;
+
+        }
+
+        .stage img {
+            width: 100%;
+            display: block;
+        }
+
+        .stage .mask1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 30%;
+            background: url("./img/01.jpg");
+            background-size: auto 100%;
+            border-right: 3px solid #FFAB91;
+            z-index: 99;
+        }
+
+        .stage .mask2 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            background: url("./img/02.jpg");
+            background-size: auto 100%;
+            z-index: 9;
+            border-right: 3px solid #FFAB91;
+        }
+
+        .stage .range1 {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            margin: 0;
+            z-index: 999;
+            opacity: 0;
+        }
+
+        .stage .range2 {
+            position: absolute;
+            top: 60%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            margin: 0;
+            z-index: 999;
+            opacity: 0;
+        }
+
+        .stage .progress {
+            position: absolute;
+            top: 47%;
+            left: 0;
+            width: 100%;
+            height: 100;
+        }
+
+        .stage .progress .sp1 {
+            width: 30px;
+            height: 30px;
+            border: 4px solid rgba(255, 171, 145, 0.8);
+            border-radius: 50%;
+            position: relative;
+            left: 30%;
+            display: block;
+            z-index: 199;
+            margin-left: -19px;
+            margin-right: -19px;
+        }
+
+        .stage .progress .sp2 {
+            width: 30px;
+            height: 30px;
+            border: 4px solid rgba(255, 171, 145, 0.8);
+            border-radius: 50%;
+            position: relative;
+            left: 50%;
+            display: block;
+            z-index: 199;
+            margin-left: -19px;
+            margin-right: -19px;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="mask1"></div>
+        <div class="mask2"></div>
+        <img src="./img/03.jpg" alt="">
+        <input type="range" class="range1" min="0" max="100" value="30" step="1" />
+        <input type="range" class="range2" min="0" max="100" value="50" step="1" />
+        <div class="progress">
+
+            <svg class="sp1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                <polygon points="0 50 37 68 37 32 0 50" style="fill:#FFAB91"></polygon>
+                <polygon points="100 50 64 32 64 68 100 50" style="fill:#FFAB91"></polygon>
+            </svg>
+            <svg class="sp2" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                <polygon points="0 50 37 68 37 32 0 50" style="fill:#FFAB91"></polygon>
+                <polygon points="100 50 64 32 64 68 100 50" style="fill:#FFAB91"></polygon>
+            </svg>
+        </div>
+
+    </div>
+
+    <script>
+        var stage = document.getElementsByClassName("stage")[0];
+        var mask1 = stage.getElementsByClassName("mask1")[0];
+        var mask2 = stage.getElementsByClassName("mask2")[0];
+        var range1 = stage.getElementsByClassName("range1")[0];
+        var range2 = stage.getElementsByClassName("range2")[0];
+        var sp1 = stage.getElementsByClassName("sp1")[0];
+        var sp2 = stage.getElementsByClassName("sp2")[0];
+        range1.oninput = function () {
+            console.log(range1.value, range2.value);
+            if (Number(range1.value) >= Number(range2.value)) {
+                range2.value = range1.value;
+            }
+
+            mask1.style.width = this.value + "%";
+            sp1.style.left = this.value + "%";
+            mask2.style.width = range2.value + "%";
+            sp2.style.left = range2.value + "%";
+        }
+        range2.oninput = function () {
+            if (Number(range2.value) <= Number(range1.value)) {
+                range1.value = range2.value;
+            }
+            console.log(range1.value, range2.value)
+            mask2.style.width = this.value + "%";
+            sp2.style.left = this.value + "%";
+            mask1.style.width = range1.value + "%";
+            sp1.style.left = range1.value + "%";
+
+        }
+    </script>
+</body>
+
+</html>

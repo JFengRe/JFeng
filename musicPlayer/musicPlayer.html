@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" />
+    <link rel="stylesheet" href="./style.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+    <audio controls src="https://music.163.com/song/media/outer/url?id=5253734.mp3"></audio>
+    <div class="stage">
+        <div class="mask"></div>
+        <!-- 左边图片 -->
+        <div class="picture">
+            <img src="https://p1.music.126.net/n4YTVSO7QK1VRQMCEeOPqA==/80264348845281.jpg" alt="">
+        </div>
+
+        <!-- 那条杆 -->
+        <div class="rod">
+            <img src="/musicPlayer/img/cd_tou.png" alt="">
+        </div>
+        <!-- 右边信息及控件 -->
+        <div class="info_control">
+            <div class="info">
+                <h3>恋爱达人</h3>
+                <h5>罗志祥</h5>
+            </div>
+
+            <div class="controlUp">
+                <div class="controlUp_btn">
+                    <div class="Last glyphicon glyphicon-backward"></div>
+                    <!-- play_pause glyphicon glyphicon-pause 暂停-->
+                    <div class="play_pause suspend glyphicon glyphicon-play"></div>
+                    <div class="Next glyphicon glyphicon-forward"></div>
+                    <!-- glyphicon glyphicon-refresh 列表循环 -->
+                    <!-- <div class=" playMode glyphicon glyphicon-random"></div> -->
+                    <div class=" playMode glyphicon glyphicon-refresh"></div>
+                </div>
+                <div class="volume">
+                    <span class="glyphicon glyphicon-volume-up"></span>
+                    <div class="replace"><div class="bgc"></div></div>
+                    <input type="range" min="0" max="100" name="" id="">
+                </div>
+
+            </div>
+            <div class="controlDown">
+                <input class="speed_of_progress" min="0" max="100" type="range" >
+                <div class="bgc">
+                    <div class="sider"></div>
+                </div>
+                <span class="currentTime">00:00</span>
+                <span class="endTime">00:00</span>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 歌曲列表 -->
+    <div class="songList">
+        <ul>
+            <!-- <li>xxx</li> -->
+        </ul>
+    </div>
+
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+
+
+    <!-- 原网址  http://www.jq22.com/yanshi20200 -->
+</body>
+
+</html>

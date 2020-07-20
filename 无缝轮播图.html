@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无缝轮播图</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .swiper {
+            width: 1300px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            top: 0px;
+            margin: 0 auto;
+        }
+
+        .swiper .content {
+            width: 10000px;
+            height: 700px;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .swiper .content li {
+            width: 1300px;
+            height: 700px;
+            float: left;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            font-size: 0;
+            background-position: auto center;
+        }
+
+
+        .swiper .spots {
+            position: absolute;
+            bottom: -100%;
+            left: 50%;
+            margin-left: -72px;
+            font-size: 0;
+        }
+
+        .swiper .spots li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: honeydew;
+            margin: 5px;
+            font-size: 0px;
+            border-radius: 50%;
+        }
+
+        .swiper .spots li.active {
+            width: 20px;
+            border-radius: 20px;
+        }
+
+        .swiper .btn {
+            width: 1300px;
+            height: 40px;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            display: none;
+        }
+
+        .swiper .btn span {
+            opacity: 0.5;
+        }
+
+        .swiper .btn .prev {
+            float: left;
+        }
+
+        .swiper .btn .next {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <ul class="content">
+            <li
+                style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594998250843&di=761969c167b6a49cb2319c2f54b8e81e&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Ff%2F5493deb178ea3.jpg') ">
+                item 1</li>
+            <li
+                style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594998250839&di=c2471f11db1ecc896440e383523f96d1&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F0824ab18972bd407ff38f2b378899e510eb30984.jpg') ">
+                item 2</li>
+            <li
+                style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594998250837&di=d248e74330225fed3a9aa868f8b19d7d&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fa%2F541ba6414cc7f.jpg') ">
+                item 3</li>
+            <li
+                style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594998250833&di=3971bdf5a87382ad572b4b198b314004&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1302%2F17%2Fc2%2F18181606_1361090042460.jpg') ">
+                item 4</li>
+            <li
+                style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594998307363&di=c8959f2db1f79358f74d1a23cc2b536d&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-04-27%2F5ae2ea4ce59ae.jpg') ">
+                item 5</li>
+            <li
+                style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594998477590&di=8deeffe3789ed7e448af8505e86d6e0c&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-01-11%2F5a574a7152848.jpg') ">
+                item 5</li>
+        </ul>
+
+        <ul class="spots">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+
+        <div class="btn">
+            <span class="prev"><svg t="1592563332277" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="4060" width="40" height="40">
+                    <path
+                        d="M707.323 960.556l56.093-54.503-403.917-392.469 403.917-392.475-56.093-54.502L247.32 513.584l460.004 446.972z m0 0z"
+                        p-id="4061"></path>
+                </svg></span>
+            <span class="next"><svg t="1592563290821" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2125" width="40" height="40">
+                    <path
+                        d="M325.048 93.511l-60.030 59.435 357.181 359.631-360.184 356.603 59.522 59.93 420.207-416.043z"
+                        p-id="2126"></path>
+                </svg></span>
+        </div>
+    </div>
+
+    <script>
+
+        function lbt() {
+            var imgW = $('.content li').eq(0).width()
+            // console.log(imgW)
+            // 给所有图片添加一个索引标识
+            $('.content li').attr('title', function (index) {
+                return index;
+            })
+            //  console.log( $('.content li').eq(0).attr('title') )
+
+            //  根据原始下标查找对应的图片
+            function filterByIndex(n) {
+                return $('.content li').filter(function (index) {
+                    return $(this).attr('title') == n
+                })
+            }
+
+            // 获取当前显示图片的原始下标
+            var currentIndex = $('.content').children().first().attr('title')
+
+            // 切换下一张图片的方法，切换图片
+            function nextBtn() {
+                // 获取当前显示图片的原始下标
+
+
+                $('.content').stop().animate({
+                    left: - imgW + 'px'
+                }, function () {
+                    // 获取当前显示图片的原始下标
+
+
+                    // 动画完成之后，把第一张图片切换到最后
+                    $('.content').children().first().appendTo($('.content'));
+                    // 恢复定位
+                    $('.content').css({ left: '0' })
+                })
+            }
+
+            //切换上一张图片的方法
+            function prevBtn() {
+                $('.content').css('left', - imgW + 'px').stop().animate({
+                    left: '0'
+                })
+            }
+
+            //   点击小点点切换图片
+            $('.spots li').click(function () {
+
+                // 获取即将显示图片的原始下标
+                // console.log(this);
+                var prepareIndex = $(this).index()
+
+                // 判断两个下标
+                if (currentIndex < prepareIndex) {
+                    // 找到即将显示的图片，并插入到当前图片的后面
+                    $('.content').children().first().after(filterByIndex(prepareIndex))
+                    // 调用切换下一张图片的方法
+                    nextBtn()
+                    brightSpot(prepareIndex)
+
+                } else if (currentIndex > prepareIndex) {
+                    // 找到即将显示的图片，放到原始位置，在当前图片前面
+                    $('.content').children().first().before(filterByIndex(prepareIndex))
+                    // 调用切换下一张图片的方法
+                    prevBtn()
+                    brightSpot(prepareIndex)
+
+                }
+            })
+
+            //  点击下一张图片按钮
+            $('.btn span').last().click(function () {
+                // console.log('1')
+
+
+                // 获取即将显示图片的原始下标
+                var prepareIndex = ++currentIndex > $('.content li').length - 1 ? 0 : currentIndex
+                if (currentIndex == $('.content li').length - 1) {
+                    currentIndex = 0;
+                }
+                // console.log(prepareIndex)
+
+                //  把即将显示的图片放在当前图片的后面
+                $('.content').children().first().after(filterByIndex(prepareIndex))
+                // 调用切换下一张图片的方法
+                nextBtn();
+                brightSpot(prepareIndex)
+            })
+
+            //  点击上一张图片按钮
+            $('.btn span').first().click(function () {
+                // console.log('1')
+                // 获取当前显示图片的原始下标
+                //  var currentIndex = $('.content').children().first().attr('title')
+                // 获取即将显示图片的原始下标
+                var prepareIndex = --currentIndex < 0 ? $('.content li').length - 1 : currentIndex
+                if (currentIndex == -1) {
+                    currentIndex = $('.content li').length - 1;
+                }
+                console.log(currentIndex)
+
+                //  把即将显示的图片放在当前图片的前面
+                $('.content').children().first().before(filterByIndex(prepareIndex))
+                // 调用切换下一张图片的方法
+                prevBtn();
+                brightSpot(prepareIndex)
+            })
+
+            //  高亮小点点
+            function brightSpot(index) {
+                $('.spots li').eq(index).addClass('active').siblings().removeClass('active')
+            }
+
+            //  自动播放
+            var autoPlay = setInterval(function () {
+                $('.btn span').last().click();
+            }, 3000)
+
+            //  鼠标移进移出
+            $('.swiper').hover(function () {
+                // 显示小点点
+                $('.spots').animate({
+                    bottom: '50px'
+                })
+
+                // 显示按钮
+                $('.btn').fadeIn()
+
+                // 清除定时器
+                clearInterval(autoPlay)
+
+            }, function () {
+                // 隐藏小点点
+                $('.spots').animate({
+                    bottom: '-100%'
+                })
+
+                // 隐藏按钮
+                $('.btn').fadeOut()
+
+                //  自动播放
+                autoPlay = setInterval(function () {
+                    $('.btn span').last().click();
+                }, 3000)
+            })
+        }
+        lbt();
+    </script>
+</body>
+
+</html>

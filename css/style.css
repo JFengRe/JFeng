@@ -6,16 +6,13 @@
   font-weight: 600;
   text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
 }
-.f-bootstrap .container {
-  width: 100%;
-}
 .f-bootstrap .container h1 {
   font-size: 46px;
   text-align: center;
   margin-top: 50px;
 }
 .f-bootstrap .container .row {
-  padding: 54px;
+  padding: 54px 0;
   text-align: center;
 }
 .f-bootstrap .container .row .content {
@@ -25,56 +22,83 @@
 .f-bootstrap .container .row .content h3 {
   font-size: 36px;
 }
-.f-bootstrap .container .row .content .f-models {
-  height: 600px;
+.f-bootstrap .container .row .content .f-project {
   display: block;
-  background: url("../img/models.png") no-repeat;
-  -moz-background-size: cover;
-       background-size: cover;
-  background-position: right;
-  border: 5px solid whitesmoke;
 }
-.f-bootstrap .container .row .content .f-Starbucks {
-  height: 600px;
-  display: block;
-  background: url("../img/Starbucks.png") no-repeat;
-  -moz-background-size: cover;
-       background-size: cover;
-  background-position: right;
+.f-bootstrap .container .row .content .f-project img {
   border: 5px solid whitesmoke;
-}
-.f-bootstrap .container .row .content .f-RANE {
-  height: 600px;
-  display: block;
-  background: black url("../img/RANG.png") no-repeat;
-  -moz-background-size: cover;
-       background-size: cover;
-  background-position: right;
-  border: 5px solid whitesmoke;
-}
-.f-js .container {
   width: 100%;
 }
-.f-js .container h1 {
+.f-js_jq .container h1 {
   font-size: 46px;
   text-align: center;
   margin-top: 50px;
 }
-.f-js .container .row {
-  padding: 54px;
+.f-js_jq .container .row {
+  padding: 54px 0;
   text-align: center;
 }
-.f-js .container .row .content {
+.f-js_jq .container .row .content {
   margin-bottom: 30px;
   padding: 0 15px;
 }
-.f-js .container .row .content h3 {
+.f-js_jq .container .row .content h3 {
   font-size: 36px;
 }
-.f-js .container .row .content .f-models {
+.f-js_jq .container .row .content .f-project {
   display: block;
 }
-.f-js .container .row .content .f-models img {
+.f-js_jq .container .row .content .f-project img {
   border: 5px solid whitesmoke;
+  width: 100%;
+}
+.f-css3 {
+  width: 100%;
+}
+.f-css3 .container h1 {
+  font-size: 46px;
+  text-align: center;
+  margin-top: 50px;
+}
+.f-css3 .container .row {
+  padding: 54px 0;
+  text-align: center;
+}
+.f-css3 .container .row .content {
+  margin-bottom: 30px;
+  padding: 0 15px;
+}
+.f-css3 .container .row .content h3 {
+  font-size: 36px;
+}
+.f-css3 .container .row .content .f-project {
+  display: block;
+}
+.f-css3 .container .row .content .f-project img {
+  border: 5px solid whitesmoke;
+  width: 100%;
+}
+.f-H5 .container h1 {
+  font-size: 46px;
+  text-align: center;
+  margin-top: 50px;
+}
+.f-H5 .container .row {
+  padding: 54px 0;
+  text-align: center;
+}
+.f-H5 .container .row .content {
+  margin-bottom: 30px;
+  padding: 0 15px;
+}
+.f-H5 .container .row .content h3 {
+  font-size: 36px;
+}
+.f-H5 .container .row .content .f-project {
+  display: block;
+}
+.f-H5 .container .row .content .f-project img {
+  border: 5px solid whitesmoke;
+  width: 100%;
 }
 /*# sourceMappingURL=./style.css.map */

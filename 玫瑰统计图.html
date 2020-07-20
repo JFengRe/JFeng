@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玫瑰统计图</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="700" height="700" id="canvas">
+
+    </canvas>
+    <script>
+        var canvas = document.querySelector("canvas")
+        var context = canvas.getContext("2d");
+        var arr = [99, 77, 66, 88, 56, 66];
+
+        function rose(arr) {
+            // 数组的总和
+            var sum = arr.reduce(function (total, elemetn, index) {
+                return total + elemetn;
+            })
+            // 数组中的最大值
+            var max = arr.sort(function (a, b) {
+                return b - a;
+            })[0];
+            // console.log(max);
+            // console.log(sum);
+
+
+            arr.forEach(function (element, index, currentArr) {
+                // console.log(currentArr)
+                // 截取前面的数为数组
+                var beforeIndex = currentArr.slice(0,index)
+                // 前面数组的和
+                var beforeIndexSum = beforeIndex.length == 0 ? 0 : beforeIndex.reduce(function (total, element, index) { 
+                    return total + element ;
+                 });
+
+                context.beginPath();
+                context.moveTo(350, 350);
+                
+                // context.arc(350, 350, 100 * element / max, Math.PI * , Math.PI * 2);
+                context.arc(350, 350, 100 * element / max, Math.PI / 180 * 360 * beforeIndexSum / sum, Math.PI / 180 * 360 * (beforeIndexSum + element) / sum);
+                context.fillStyle='color | gradient | pattern';
+                context.fillStyle='#' + Math.random().toString(16).slice(-6);
+                context.fill();
+                context.closePath();
+                // console.log(Math.random().toString(16));
+
+                
+            });
+
+
+        }
+
+        rose(arr);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑火车</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        .luckDraw{
+            text-align:center ;
+            width: 570px;
+            height: 510px;
+            position: relative;
+            left: 520px;
+        }
+        .luckDraw .reward{
+            position: absolute;
+            top: 100px;
+            left: 600px;
+            width: 320px;
+            height: 500px;
+            /* background-color: red; */
+        }
+        .luckDraw .reward span.top{
+            display: block;
+            width: 320px;
+            height: 190px;
+            background-image: url("https://www.17sucai.com/preview/471607/2019-09-03/luckdraw/image/pond-success.png");
+            background-size: cover;
+
+        }
+       
+        .luckDraw .reward .img{
+            height:200px;
+            width: 253px;
+            background-color: white;
+            margin: 0 auto;
+            line-height: 200px;
+        }
+        .luckDraw .reward .img span{
+            display: inline-block;
+            height:170px;
+            width: 190px;
+            margin: 0 auto;
+        }
+        .luckDraw .btn{
+            position: absolute;
+            left: 190px;
+            top: 168px;
+            width: 190px;
+            height: 170px;
+            background-color: seashell;
+            border: none;
+            color: grey;
+            outline: none;
+            font-size: 34px;
+        }
+
+        .luckDraw .btn:hover{
+            background: gold;
+            color: whitesmoke;
+        }
+        .box{
+            width: 570px;
+            height: 510px;
+            background-color: paleturquoise;
+            position: relative;
+            padding: 0px;
+            margin-top: 100px;
+        }
+      
+        ul.box li{
+            list-style: none;
+            width: 190px;
+            height: 170px;
+            position: absolute;
+            color: seashell;
+            line-height: 100px;
+            background-size: 100%;
+            background-position: center left;
+        }
+
+        ul.box li:nth-child(1) {
+            left: 0px;
+            top: 0px;
+            background-image: url("https://www.17sucai.com/preview/1/2016-11-15/jggcj/gift0.jpg");
+            
+        }
+        ul.box li:nth-child(2) {
+            left: 190px;
+            top: 0px;
+            background-image: url("https://www.17sucai.com/preview/1/2016-11-15/jggcj/gift7.jpg");
+        }
+        ul.box li:nth-child(3) {
+            left: 380px;
+            top: 0px;
+            background-image: url("https://www.17sucai.com/preview/1/2016-11-15/jggcj/gift1.jpg");
+          
+        }
+        ul.box li:nth-child(8) {
+            left: 0px;
+            top: 170px;
+            background-image: url("https://www.17sucai.com/preview/1/2016-11-15/jggcj/gift2.jpg");
+        }
+        ul.box li:nth-child(6) {
+            left: 190px;
+            top: 340px;
+            background-image: url("https://www.17sucai.com/preview/1/2016-11-15/jggcj/gift3.jpg");
+        }
+        ul.box li:nth-child(4) {
+            left: 380px;
+            top: 170px;
+            background-image: url("https://www.17sucai.com/preview/1/2016-11-15/jggcj/gift4.jpg");
+        }
+        ul.box li:nth-child(7) {
+            left: 0px;
+            top: 340px;
+            background-image: url("https://www.17sucai.com/preview/1/2016-11-15/jggcj/gift5.jpg");
+        }
+        ul.box li:nth-child(5) {
+            left: 380px;
+            top: 340px;
+            background-image: url("https://www.17sucai.com/preview/1/2016-11-15/jggcj/gift6.jpg");
+        }
+        ul.box li.active::before{
+           content: "";
+           display: block;
+           background-color: rgba(0, 0, 0, 0.5);
+           width: 100%;
+           height: 100%;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="luckDraw">
+        <div class="reward">
+            <span class="top"></span>
+           <div class="img">
+               <span></span>
+           </div>
+        </div>
+        <ul class="box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <button class="btn">开始抽奖</button>
+    </div>
+
+    <script>
+        var lis = document.getElementsByTagName("li");
+        var btn = document.getElementsByClassName("btn")[0];
+        var reward = document.querySelector(".reward");
+        var rewardImg = reward.querySelector(".img span");
+        // 跑的次数
+        var current = 0;
+        // 定时器开关
+        canClick = true;
+
+        btn.onclick = function(){
+            // 判断抽奖是否结束
+            if(canClick){
+                var id;
+                // 重置跑的次数
+                current %= 8;
+                console.log("点击了");
+            
+
+            //确定中奖信息
+            var x = Math.floor(Math.random()*lis.length);
+            console.log("中奖信息为：",x);
+           
+
+            
+            // 视图更新
+            function updataView(ms){
+                var n = setInterval(function(){
+                    current ++;
+
+                    // console.log(current, current % 8);
+
+                    // 高亮
+                    for(var i = 0; i < lis.length; i++){
+                        if(i == current % 8){
+                            lis[i].classList.add("active");
+                        }else{
+                            lis[i].classList.remove("active");
+                        }
+                    }
+
+                    // 本次抽奖结束
+                    if(current == x + 8 *15){
+                        // 取消本次抽奖的定时器
+                        clearInterval(id);
+                        console.log("抽奖结束");
+                        // console.log(window.getComputedStyle(lis[x]).backgroundImage);
+                        // console.log(rewardImg);
+                        rewardImg.style.backgroundImage = window.getComputedStyle(lis[x]).backgroundImage;
+                        // 设置可以进行下一次抽奖
+                        canClick = true;
+                    }
+
+                    if(current == 8 * 1){
+                        // 如果已经转了两圈 取消原来头两圈慢定时器
+                        clearInterval(id);
+                        // 重新设置一个更快的定时间
+                        id = updataView(150);
+                        // console.log("id",id); 
+                    }
+                    if(current == 8 * 3){
+                        // 如果已经转了两圈 取消原来头两圈慢定时器
+                        clearInterval(id);
+                        // 重新设置一个更快的定时间
+                        id = updataView(100);
+                        // console.log("id",id); 
+                    }
+                    if(current == 8 * 5){
+                        // 如果已经转了两圈 取消原来头两圈慢定时器
+                        clearInterval(id);
+                        // 重新设置一个更快的定时间
+                        id = updataView(50);
+                        // console.log("id",id); 
+                    }
+                    if(current == 8 * 12){
+                        // 如果已经转了两圈 取消原来头两圈慢定时器
+                        clearInterval(id);
+                        // 重新设置一个更快的定时间
+                        id = updataView(100);
+                        // console.log("id",id); 
+                    }
+                    if(current == 8 * 13){
+                        // 如果已经转了两圈 取消原来头两圈慢定时器
+                        clearInterval(id);
+                        // 重新设置一个更快的定时间
+                        id = updataView(150);
+                        // console.log("id",id); 
+                    }
+                    if(current == 8 * 14){
+                        // 如果已经转了两圈 取消原来头两圈慢定时器
+                        clearInterval(id);
+                        // 重新设置一个更快的定时间
+                        id = updataView(200);
+                        // console.log("id",id); 
+                    }
+
+                },ms);
+                return n;
+            }
+
+            // 开始200ms一帧
+            id = updataView(200);
+           
+           }
+            canClick = false;
+        };
+    </script>
+</body>
+</html>
