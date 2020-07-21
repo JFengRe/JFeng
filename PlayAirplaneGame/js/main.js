@@ -10,8 +10,8 @@ var ourPlane = {
   node: gameScene.querySelector(".our-plane"),
   x: 360 / 2,
   y: 640 - 80 / 2 - 20,
-  w:66,
-  h:80,
+  w: 66,
+  h: 80,
   // 保存子弹
   bullets: [],
 }
@@ -100,6 +100,7 @@ function updataFrame() {
       // console.log(newBullet)
       newBullet.create();
       ourPlane.bullets.push(newBullet);
+      biu()
     }
 
     // 每帧都移动【所有】子弹 ourPlane.bullets所有子弹
@@ -144,33 +145,35 @@ function updataFrame() {
 
     // 检测碰撞
     // 敌方飞机遍历
-    enemies.forEach(function (enemy, indexE, enemies) { 
+    enemies.forEach(function (enemy, indexE, enemies) {
       //子弹遍历
-      ourPlane.bullets.forEach(function (bullet, indexB, bullets) { 
+      ourPlane.bullets.forEach(function (bullet, indexB, bullets) {
         // console.log(bullet, indexB, bullets)
-        
+
+
         // 子弹与敌方飞机碰撞
-        if(checkCollision(bullet, enemy)){
+        if (checkCollision(bullet, enemy)) {
           // 子弹消失
-           bullet.death = true;
+          bullet.death = true;
           //  敌方飞机减血
-           enemy.blood --;
-          
+          enemy.blood--;
+          // 撞击声音
+          ding()
           //  判断飞机死亡
-           if(enemy.blood == 0){
-             enemy.death = true;
-           }
+          if (enemy.blood == 0) {
+            enemy.death = true;
+          }
 
           //  分数增加
-          // score++ ;
+          score++ ;
 
         }
         // console.log(gameDeathState)
 
-        
+
       })
       // 我方飞机与敌方飞机碰撞死亡
-      if(checkCollision(ourPlane, enemy)){
+      if (checkCollision(ourPlane, enemy)) {
         gameDeathState = true
         console.log(gameDeathState)
         enemy.death = true
@@ -183,124 +186,134 @@ function updataFrame() {
   }, 50);
 }
 
-    // 点击开始游戏
-    startButton.onclick = function () {
-      // 切换场景
-      stageScene.classList.add("play");
+// 点击开始游戏
+startButton.onclick = function () {
+  // 切换场景
+  stageScene.classList.add("play");
 
-      // 游戏开始
-      gameFrameId = updataFrame();
-    };
+  // 游戏开始
+  gameFrameId = updataFrame();
+};
 
-    // 游戏播放
-    function gamePlay() {
-      // 切换游戏暂停状态 视图更新
-      stageScene.classList.remove("paused");
-      // 更改游戏状态
-      gamePausedState = false;
-      // 开始游戏 创建定时器
-      gameFrameId = updataFrame();
-    }
+// 游戏播放
+function gamePlay() {
+  // 切换游戏暂停状态 视图更新
+  stageScene.classList.remove("paused");
+  // 更改游戏状态
+  gamePausedState = false;
+  // 开始游戏 创建定时器
+  gameFrameId = updataFrame();
+}
 
-    // 游戏暂停
-    function gamePause() {
-      stageScene.classList.add("paused");
-      gamePausedState = true;
-      // 清除定时器
-      clearInterval(gameFrameId);
-    } 
+// 游戏暂停
+function gamePause() {
+  stageScene.classList.add("paused");
+  gamePausedState = true;
+  // 清除定时器
+  clearInterval(gameFrameId);
+}
 
-    // 游戏场景绑定点击 切换暂停游戏
-    gameScene.onclick = function () {
-      // 判断游戏暂停状态
-      if (gamePausedState) {
-        gamePlay();
-      } else {
-        gamePause();
-      }
-    };
+// 游戏场景绑定点击 切换暂停游戏
+gameScene.onclick = function () {
+  // 判断游戏暂停状态
+  if (gamePausedState) {
+    gamePlay();
+  } else {
+    gamePause();
+  }
+};
 
-    // 重新开始 重新加载页面 刷新
-    restartButton.onclick = function () {
-      // 刷新页面
-      window.location.reload();
-    };
+// 重新开始 重新加载页面 刷新
+restartButton.onclick = function () {
+  // 刷新页面
+  window.location.reload();
+};
 
-    // 更改我方飞机节点对象视图 位置
-    ourPlane.updataOurPlanePos = function () {
-      this.node.style.left = this.x - 33 + "px";
-      this.node.style.top = this.y - 40 + "px";
-    };
-    // 初始化我方飞机视图
-    ourPlane.updataOurPlanePos();
+// 更改我方飞机节点对象视图 位置
+ourPlane.updataOurPlanePos = function () {
+  this.node.style.left = this.x - 33 + "px";
+  this.node.style.top = this.y - 40 + "px";
+};
+// 初始化我方飞机视图
+ourPlane.updataOurPlanePos();
 
-    // 触屏拖动 我方飞机跟随移动
-    gameScene.ontouchmove = function (event) {
-      ourPlane.x = event.changedTouches[0].clientX;
-      ourPlane.y = event.changedTouches[0].clientY;
-      // 调用更改我方飞机节点对象视图的方法
-      ourPlane.updataOurPlanePos();
-    };
+// 触屏拖动 我方飞机跟随移动
+gameScene.ontouchmove = function (event) {
+  ourPlane.x = event.changedTouches[0].clientX;
+  ourPlane.y = event.changedTouches[0].clientY;
+  // 调用更改我方飞机节点对象视图的方法
+  ourPlane.updataOurPlanePos();
+};
 
-    // 兼容PC 没有触摸 只有鼠标移动
-    gameScene.onmousemove = function (event) {
-      // console.log(event.clientX - stageScene.offsetLeft);
+// 兼容PC 没有触摸 只有鼠标移动
+gameScene.onmousemove = function (event) {
+  // console.log(event.clientX - stageScene.offsetLeft);
 
-      // 更改我方飞机对象 坐标点信息
-      ourPlane.x = event.clientX - stageScene.offsetLeft;
-      ourPlane.y = event.clientY - stageScene.offsetTop;
-      // 更改我放飞机节点对象视图 位置
-      ourPlane.updataOurPlanePos();
-    };
-
-  
-    // 敌方飞机与我方子弹的坐标，长宽与速度
-    function Element(params) {
-      this.imgSrc = params.imgSrc;
-      this.h = params.h
-      this.w = params.w;
-      this.x = params.x;
-      this.y = params.y;
-      // 速度
-      this.speed = params.speed;
-      // 血量
-      this.blood = params.blood;
-    };
-
-    // 敌方飞机与我方子弹的创建方法
-    Element.prototype.create = function () {
-      this.node = document.createElement("img");
-      this.node.src = "./img/" + this.imgSrc;
-      this.node.style.left = this.x - this.w / 2 + "px";
-      this.node.style.top = this.y - this.h / 2 + "px";
-      gameScene.appendChild(this.node);
-    };
-
-    // 敌方飞机与我方子弹的移动方法
-    Element.prototype.move = function () {
-      this.y += this.speed;
-      // 判断是否超出画布 垂直方向
-      var topOutRange = this.y < -this.h / 2;
-      var bottomOutRange = this.y > 640 + this.h / 2;
-      if (topOutRange || bottomOutRange) {
-        // 超出画布是标记，相当于死亡标记死亡
-        this.death = true;
-      }
-      this.node.style.top = this.y - this.h / 2 + "px";
-    };
-
-    
-    //检测碰撞
-    function  checkCollision(obj1, obj2) { 
-     
-        var h = Math.abs(obj1.x - obj2.x) <= (obj1.w + obj2.w) / 2
-        var v = Math.abs(obj1.y - obj2.y) <= (obj2.w + obj2.h) / 2 
-        // console.log(h && v)
-        return h && v
-        
-      }
-
-     
+  // 更改我方飞机对象 坐标点信息
+  ourPlane.x = event.clientX - stageScene.offsetLeft;
+  ourPlane.y = event.clientY - stageScene.offsetTop;
+  // 更改我放飞机节点对象视图 位置
+  ourPlane.updataOurPlanePos();
+};
 
 
-      
+// 敌方飞机与我方子弹的坐标，长宽与速度
+function Element(params) {
+  this.imgSrc = params.imgSrc;
+  this.h = params.h
+  this.w = params.w;
+  this.x = params.x;
+  this.y = params.y;
+  // 速度
+  this.speed = params.speed;
+  // 血量
+  this.blood = params.blood;
+};
+
+// 敌方飞机与我方子弹的创建方法
+Element.prototype.create = function () {
+  this.node = document.createElement("img");
+  this.node.src = "./img/" + this.imgSrc;
+  this.node.style.left = this.x - this.w / 2 + "px";
+  this.node.style.top = this.y - this.h / 2 + "px";
+  gameScene.appendChild(this.node);
+};
+
+// 敌方飞机与我方子弹的移动方法
+Element.prototype.move = function () {
+  this.y += this.speed;
+  // 判断是否超出画布 垂直方向
+  var topOutRange = this.y < -this.h / 2;
+  var bottomOutRange = this.y > 640 + this.h / 2;
+  if (topOutRange || bottomOutRange) {
+    // 超出画布是标记，相当于死亡标记死亡
+    this.death = true;
+  }
+  this.node.style.top = this.y - this.h / 2 + "px";
+};
+
+
+//检测碰撞
+function checkCollision(obj1, obj2) {
+
+  var h = Math.abs(obj1.x - obj2.x) <= (obj1.w + obj2.w) / 2
+  var v = Math.abs(obj1.y - obj2.y) <= (obj2.w + obj2.h) / 2
+  // console.log(h && v)
+  return h && v
+
+}
+
+// 子弹发射的声音
+function biu() {
+  this.node = document.createElement("audio");
+  node.src = "./img/发射子弹.mp3";
+  node.play();
+}
+
+// 子弹打中的声音
+function ding() {
+  this.node = document.createElement("audio");
+  node.src = "./img/子弹铁皮.mp3";
+  node.play()
+}
+
