@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼图</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .stage {
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            width: 700px;
+            height: 700px;
+            /* background: pink; */
+            position: relative;
+        }
+
+        .stage li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 5px;
+            background-image: url("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=211065762,3155783093&fm=26&gp=0.jpg");
+            box-shadow: 0 0 0 3px white inset;
+            transition: all 0.8s;
+        }
+
+        .btn {
+            position: absolute;
+            top: 555px;
+            left: 100px;
+        }
+
+        .original{
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            width: 300px;
+            height: 300px;
+            background-image: url("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=211065762,3155783093&fm=26&gp=0.jpg");
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="stage"></ul>
+        <button class="btn">洗牌</button>
+        <div class="original"></div>
+    </div>
+    <script>
+        function xxx(size) {
+            // var size = 3;
+            var stage = document.querySelector(".stage");
+            var original = stage.querySelector(".original");
+            for (var i = 0; i < size * size; i++) {
+                var node = document.createElement("li");
+                node.style.width = 100 / size + "%";
+                node.style.height = 100 / size + "%";
+                // 背景图大小
+                node.style.backgroundSize = size * 100 + "% auto";
+                // 背景偏移
+                node.style.backgroundPosition = (i % size) * -100 + "% " + (Math.floor(i / size)) * -100 + "%";
+
+                node.style.left = (i % size) * (100 / size) + "% ";
+                node.style.top = (Math.floor(i / size)) * (100 / size) + "%";
+                // 添加id
+                node.id = "card" + i;
+                // 允许拖动
+                node.draggable = true;
+                stage.appendChild(node);
+            }
+
+            var cards = stage.querySelectorAll("li");
+
+            cards.forEach(function (element, index) {
+                // 开始拖动
+                element.ondragstart = function (event) {
+                    event.dataTransfer.setData("Text", event.target.id);
+                }
+                //  拖动经过盒子
+                element.ondragover = function (event) {
+                    event.preventDefault();
+                }
+
+                //   在盒子上放开
+                element.ondrop = function (event) {
+                    var e1 = event.target;
+                    var e2 = document.getElementById(event.dataTransfer.getData("Text"));
+
+                    // 交叉互换位置
+                    var tmp = {
+                        top: e1.style.top,
+                        left: e1.style.left,
+                    };
+                    e1.style.left = e2.style.left;
+                    e1.style.top = e2.style.top;
+                    e2.style.left = tmp.left;
+                    e2.style.top = tmp.top;
+
+                    // console.log(e1,e2)
+
+
+
+
+                    // 判断card当前定位是不是初始定位
+
+                    var check = Array.prototype.every.call(cards, function (element, index) {
+                        return (parseInt(element.style.top) == parsetInt(Math.floor(index / size) * (100 / size) + "%")
+                            && parseInt(element.style.left) == parseInt(index % size) * (100 / size) + "%")
+                    });
+
+                    if (check) {
+                        if (check) {
+                            console.log("成功")
+                        }
+                    }
+                }
+            });
+
+            //  洗牌
+            function shuffle() {
+                var arr = [];
+                for (var i = 0; i < size * size; i++) {
+                    arr.push(i);
+                }
+
+
+                var newArr = [];
+                for (var j = 0; j < size * size; j++) {
+                    newArr.push(arr.splice(Math.floor(Math.random() * arr.length), 1)[0]);
+                }
+                cards.forEach(function (element, index) {
+                    element.style.left = (newArr[index] % size) * (100 / size) + "%";
+                    element.style.top = (Math.floor(newArr[index] / size)) * (100 / size) + "%";
+                })
+            }
+
+            document.querySelector(".btn").onclick = function () {
+                shuffle()
+            }
+        }
+
+        xxx(6)
+    </script>
+</body>
+
+</html>
